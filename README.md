@@ -16,7 +16,7 @@ Capture image: `http://localhost:8012/capture`
 Response: 
 
 ```json
-body = {
+{
     "image": f"data:image/jpeg;base64,{img_base64}",
     "heatmap": f"data:image/jpeg;base64,{hsv_base64}",
     "processingTime": 1.0,

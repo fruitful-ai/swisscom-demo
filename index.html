@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Capture HSV Image</title>
+</head>
+
+<body>
+  <h1>HSV Image Capture</h1>
+  <img id="hsvImage" alt="HSV Capture" />
+
+  <script>
+    async function fetchCapture() {
+      try {
+        // Change this URL to match your FastAPI server address and port.
+        const response = await fetch("http://127.0.0.1:8012/capture");
+        if (!response.ok) {
+          throw new Error("Network response was not ok: " + response.statusText);
+        }
+        const data = await response.json();
+        if (!data.heatmap) {
+          console.error("No HSV image data received:", data);
+          return;
+        }
+        // Create a data URI from the base64 encoded JPEG image.
+        const hsvSrc = data.heatmap;
+        document.getElementById("hsvImage").src = hsvSrc;
+      } catch (error) {
+        console.error("Error fetching capture:", error);
+      }
+    }
+
+    // Call fetchCapture when the page finishes loading.
+    window.addEventListener("load", fetchCapture);
+  </script>
+</body>
+
+</html>

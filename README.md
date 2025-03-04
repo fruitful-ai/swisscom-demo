@@ -20,7 +20,7 @@ Response:
     "image": "data:image/jpeg;base64,img...",
     "heatmap": "data:image/jpeg;base64,img...",
     "processingTime": 1.0,
-    "isDetected": False
+    "isDetected": false
 }
 ```
 

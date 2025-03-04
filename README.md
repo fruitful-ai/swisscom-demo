@@ -17,8 +17,8 @@ Response:
 
 ```json
 {
-    "image": f"data:image/jpeg;base64,{img_base64}",
-    "heatmap": f"data:image/jpeg;base64,{hsv_base64}",
+    "image": "data:image/jpeg;base64,img...",
+    "heatmap": "data:image/jpeg;base64,img...",
     "processingTime": 1.0,
     "isDetected": False
 }
